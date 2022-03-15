@@ -41,7 +41,7 @@
       <el-col :sm="24" :lg="12" style="padding-left: 20px">
         <h2>若依后台管理框架</h2>
         <p>
-          一直想做一款后台管理系统，看了很多优秀的开源项目但是发现没有合适自己的。于是利用空闲休息时间开始自己写一套后台系统。如此有了若依管理系统。，她可以用于所有的Web应用程序，如网站管理后台，网站会员中心，CMS，CRM，OA等等，当然，您也可以对她进行深度定制，以做出更强系统。所有前端后台代码封装过后十分精简易上手，出错概率低。同时支持移动客户端访问。系统会陆续更新一些实用功能。
+          一直想做一款后台管理系统，看了很多优秀的开源项目但是发现没有合适自己的。于是利用空闲休息时间开始自己写一套后台系统。如此有了zhc-ui。，她可以用于所有的Web应用程序，如网站管理后台，网站会员中心，CMS，CRM，OA等等，当然，您也可以对她进行深度定制，以做出更强系统。所有前端后台代码封装过后十分精简易上手，出错概率低。同时支持移动客户端访问。系统会陆续更新一些实用功能。
         </p>
         <p>
           <b>当前版本:</b> <span>v{{ version }}</span>
@@ -119,7 +119,8 @@
             </p>
             <p>
               <i class="el-icon-user-solid"></i> QQ群：<s>满42799195</s>
-              <s>满170157040</s> <s>满130643120</s> <s>满225920371</s> <s>满201705537</s>
+              <s>满170157040</s> <s>满130643120</s> <s>满225920371</s>
+              <s>满201705537</s>
               <a href="https://jq.qq.com/?_wv=1027&k=qdT1Ojpz" target="_blank">
                 236543183</a
               >
@@ -162,7 +163,7 @@
                 <li>代码生成新增Java类型Boolean</li>
                 <li>定时任务目标字符串过滤特殊字符</li>
                 <li>定时任务目标字符串验证包名白名单</li>
-				<li>升级nacos到最新版2.0.4</li>
+                <li>升级nacos到最新版2.0.4</li>
                 <li>升级spring-cloud到最新版2021.0.0</li>
                 <li>升级spring-boot到最新版本2.6.3</li>
                 <li>升级spring-boot-admin到最新版2.6.1</li>
@@ -263,7 +264,9 @@
                 <li>修复多图组件验证失败被删除问题</li>
                 <li>请求参数新增reasonable分页合理化属性</li>
                 <li>修复代码生成页面数据编辑保存之后总是跳转第一页的问题</li>
-                <li>修复带safari浏览器无法格式化utc日期格式yyyy-MM-dd'T'HH:mm:ss.SSS问题</li>
+                <li>
+                  修复带safari浏览器无法格式化utc日期格式yyyy-MM-dd'T'HH:mm:ss.SSS问题
+                </li>
                 <li>其他细节优化</li>
               </ol>
             </el-collapse-item>
@@ -324,7 +327,9 @@
             </el-collapse-item>
             <el-collapse-item title="v3.0.0 - 2021-06-10">
               <ol>
-                <li>新增菜单导航显示风格TopNav（false为左侧导航菜单，true为顶部导航菜单）</li>
+                <li>
+                  新增菜单导航显示风格TopNav（false为左侧导航菜单，true为顶部导航菜单）
+                </li>
                 <li>布局设置支持保存&重置配置</li>
                 <li>富文本编辑器支持自定义上传地址</li>
                 <li>富文本编辑组件新增readOnly属性</li>
@@ -665,7 +670,7 @@
             <img
               src="https://oscimg.oschina.net/oscnet/up-d6695f82666e5018f715c41cb7ee60d3b73.png"
               alt="donate"
-              style="width:100%"
+              style="width: 100%"
             />
             <span style="display: inline-block; height: 30px; line-height: 30px"
               >你可以请作者喝杯咖啡表示鼓励</span
@@ -678,10 +683,10 @@
 </template>
 
 <script setup name="Index">
-const version = ref('3.4.0')
+const version = ref("3.4.0");
 
 function goTarget(url) {
-  window.open(url, '__blank')
+  window.open(url, "__blank");
 }
 </script>
 
@@ -748,4 +753,3 @@ function goTarget(url) {
   }
 }
 </style>
-

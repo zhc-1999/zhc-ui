@@ -1,30 +1,65 @@
 <template>
-  <div class="sidebar-logo-container" :class="{ 'collapse': collapse }" :style="{ backgroundColor: sideTheme === 'theme-dark' ? variables.menuBackground : variables.menuLightBackground }">
+  <div
+    class="sidebar-logo-container"
+    :class="{ collapse: collapse }"
+    :style="{
+      backgroundColor:
+        sideTheme === 'theme-dark'
+          ? variables.menuBackground
+          : variables.menuLightBackground,
+    }"
+  >
     <transition name="sidebarLogoFade">
-      <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
+      <router-link
+        v-if="collapse"
+        key="collapse"
+        class="sidebar-logo-link"
+        to="/"
+      >
         <img v-if="logo" :src="logo" class="sidebar-logo" />
-        <h1 v-else class="sidebar-title" :style="{ color: sideTheme === 'theme-dark' ? variables.logoTitleColor : variables.logoLightTitleColor }">{{ title }}</h1>
+        <h1
+          v-else
+          class="sidebar-title"
+          :style="{
+            color:
+              sideTheme === 'theme-dark'
+                ? variables.logoTitleColor
+                : variables.logoLightTitleColor,
+          }"
+        >
+          {{ title }}
+        </h1>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
         <img v-if="logo" :src="logo" class="sidebar-logo" />
-        <h1 class="sidebar-title" :style="{ color: sideTheme === 'theme-dark' ? variables.logoTitleColor : variables.logoLightTitleColor }">{{ title }}</h1>
+        <h1
+          class="sidebar-title"
+          :style="{
+            color:
+              sideTheme === 'theme-dark'
+                ? variables.logoTitleColor
+                : variables.logoLightTitleColor,
+          }"
+        >
+          {{ title }}
+        </h1>
       </router-link>
     </transition>
   </div>
 </template>
 
 <script setup>
-import variables from '@/assets/styles/variables.module.scss'
-import logo from '@/assets/logo/logo.png'
+import variables from "@/assets/styles/variables.module.scss";
+import logo from "@/assets/logo/logo.png";
 
 defineProps({
   collapse: {
     type: Boolean,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
-const title = ref('若依管理系统');
+const title = ref("zhc-ui");
 const store = useStore();
 const sideTheme = computed(() => store.state.settings.sideTheme);
 </script>
