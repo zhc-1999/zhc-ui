@@ -42,9 +42,9 @@
               @keyup.enter="handleQuery"
             />
           </el-form-item>
-          <el-form-item label="手机号码" prop="phonenumber">
+          <el-form-item label="手机号码" prop="phone">
             <el-input
-              v-model="queryParams.phonenumber"
+              v-model="queryParams.phone"
               placeholder="请输入手机号码"
               clearable
               style="width: 240px"
@@ -177,15 +177,15 @@
             label="部门"
             align="center"
             key="deptName"
-            prop="dept.deptName"
+            prop="deptName"
             v-if="columns[3].visible"
             :show-overflow-tooltip="true"
           />
           <el-table-column
             label="手机号码"
             align="center"
-            key="phonenumber"
-            prop="phonenumber"
+            key="phone"
+            prop="phone"
             v-if="columns[4].visible"
             width="120"
           />
@@ -297,9 +297,9 @@
         </el-row>
         <el-row>
           <el-col :span="12">
-            <el-form-item label="手机号码" prop="phonenumber">
+            <el-form-item label="手机号码" prop="phone">
               <el-input
-                v-model="form.phonenumber"
+                v-model="form.phone"
                 placeholder="请输入手机号码"
                 maxlength="11"
               />
@@ -535,7 +535,7 @@ const data = reactive({
     pageNum: 1,
     pageSize: 10,
     userName: undefined,
-    phonenumber: undefined,
+    phone: undefined,
     status: undefined,
     deptId: undefined,
   },
@@ -568,7 +568,7 @@ const data = reactive({
         trigger: ["blur", "change"],
       },
     ],
-    phonenumber: [
+    phone: [
       {
         pattern: /^1[3|4|5|6|7|8|9][0-9]\d{8}$/,
         message: "请输入正确的手机号码",
@@ -601,8 +601,8 @@ function getList() {
   listUser(proxy.addDateRange(queryParams.value, dateRange.value)).then(
     (res) => {
       loading.value = false;
-      userList.value = res.rows;
-      total.value = res.total;
+      userList.value = res.data.list;
+      total.value = res.data.total;
     }
   );
 }
@@ -754,7 +754,7 @@ function reset() {
     userName: undefined,
     nickName: undefined,
     password: undefined,
-    phonenumber: undefined,
+    phone: undefined,
     email: undefined,
     sex: undefined,
     status: "0",
