@@ -13,7 +13,7 @@ export function listUser(query) {
 // 查询用户详细
 export function getUser(userId) {
   return request({
-    url: '/system/user/' + parseStrEmpty(userId),
+    url: '/zhc-system-service/user/' + parseStrEmpty(userId),
     method: 'get'
   })
 }
@@ -21,7 +21,7 @@ export function getUser(userId) {
 // 新增用户
 export function addUser(data) {
   return request({
-    url: '/system/user',
+    url: '/zhc-system-service/user/insertOrEdit',
     method: 'post',
     data: data
   })
@@ -30,8 +30,8 @@ export function addUser(data) {
 // 修改用户
 export function updateUser(data) {
   return request({
-    url: '/system/user',
-    method: 'put',
+    url: '/zhc-system-service/user/insertOrEdit',
+    method: 'post',
     data: data
   })
 }
