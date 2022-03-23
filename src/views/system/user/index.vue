@@ -479,6 +479,7 @@ import {
   getUser,
   updateUser,
   addUser,
+  exportUser,
 } from "@/api/system/user";
 
 const router = useRouter();
@@ -638,8 +639,12 @@ function handleDelete(row) {
 }
 /** 导出按钮操作 */
 function handleExport() {
+  // exportUser(form.value).then((response) => {
+  //   proxy.$modal.msgSuccess("导出成功");
+  //   open.value = false;
+  // });
   proxy.download(
-    "system/user/export",
+    "/zhc-system-service/user/export",
     {
       ...queryParams.value,
     },

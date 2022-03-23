@@ -25,7 +25,7 @@ export default defineConfig(({ mode, command }) => {
       open: true,
       proxy: {
         // https://cn.vitejs.dev/config/#server-proxy
-        '/zhc-system-service': {
+        '/dev-api': {
           target: 'http://localhost:6001',
           changeOrigin: true,
           rewrite: (p) => p.replace(/^\/dev-api/, '')

@@ -9,7 +9,14 @@ export function listUser(query) {
     params: query
   })
 }
-
+// 导出用户列表
+export function exportUser(query) {
+  return request({
+    url: '/zhc-system-service/user/export',
+    method: 'post',
+    params: query
+  })
+}
 // 查询用户详细
 export function getUser(userId) {
   return request({
@@ -39,7 +46,7 @@ export function updateUser(data) {
 // 删除用户
 export function delUser(userId) {
   return request({
-    url: '/system/user/' + userId,
+    url: '/zhc-system-service/user/' + userId,
     method: 'delete'
   })
 }
@@ -51,7 +58,7 @@ export function resetUserPwd(userId, password) {
     password
   }
   return request({
-    url: '/system/user/resetPwd',
+    url: '/zhc-system-service/user/resetPwd',
     method: 'put',
     data: data
   })
